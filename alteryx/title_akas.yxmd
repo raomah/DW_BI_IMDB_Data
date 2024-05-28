@@ -1,0 +1,239 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.4">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="30" y="30" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\anvor\Downloads\title_akas.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>title_akas.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="titleId" size="254" source="File: C:\Users\anvor\Downloads\title_akas.csv" type="V_String" />
+            <Field name="ordering" size="254" source="File: C:\Users\anvor\Downloads\title_akas.csv" type="V_String" />
+            <Field name="title" size="254" source="File: C:\Users\anvor\Downloads\title_akas.csv" type="V_String" />
+            <Field name="region" size="254" source="File: C:\Users\anvor\Downloads\title_akas.csv" type="V_String" />
+            <Field name="language" size="254" source="File: C:\Users\anvor\Downloads\title_akas.csv" type="V_String" />
+            <Field name="types" size="254" source="File: C:\Users\anvor\Downloads\title_akas.csv" type="V_String" />
+            <Field name="attributes" size="254" source="File: C:\Users\anvor\Downloads\title_akas.csv" type="V_String" />
+            <Field name="isOriginalTitle" size="254" source="File: C:\Users\anvor\Downloads\title_akas.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="102" y="-18" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\anvor\AppData\Local\Temp\Engine_12376_4ab5696c1d684355ae9fcfb9eebe39bd_\Engine_8992_981057262b934b5fbac84503d5638bc5_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>LR</ViewMode>
+            <ViewSize value="49" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints />
+            </View2>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="222" y="30" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if [region]='\N' then &#xA;&quot;&quot;&#xA;else &#xA;[region]&#xA;endif &#xA;" field="region" size="254" type="V_String" />
+            <FormulaField expression="if [language]='\N' then &#xA;&quot;&quot;&#xA;else &#xA;[language]&#xA;endif " field="language" size="254" type="V_String" />
+            <FormulaField expression="if [types]='\N' then &#xA;&quot;&quot;&#xA;else &#xA;[types]&#xA;endif " field="types" size="254" type="V_String" />
+            <FormulaField expression="if [attributes]='\N' then &#xA;&quot;&quot;&#xA;else &#xA;[attributes]&#xA;endif " field="attributes" size="254" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>region = if [region]='\N' then 
+""
+else 
+[region]
+endif 
+
+language = if [languag...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="318" y="30" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="titleId" selected="True" />
+            <SelectField field="ordering" selected="True" />
+            <SelectField field="title" selected="True" />
+            <SelectField field="region" selected="True" />
+            <SelectField field="language" selected="True" />
+            <SelectField field="types" selected="True" />
+            <SelectField field="attributes" selected="True" />
+            <SelectField field="isOriginalTitle" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="390" y="30" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="23">odbc:DSN=PostgreSQL35W;UID=postgres;PWD=__EncPwd1__|||stg_imdb_title_akas</File>
+          <Passwords>49B64C1CFB3B9D77781C322DF</Passwords>
+          <FormatSpecificOptions>
+            <Projection />
+            <SpatialObjSize>8000</SpatialObjSize>
+            <TransactionSize>10000</TransactionSize>
+            <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+            <PostSQL />
+            <TableStyle>Quoted</TableStyle>
+            <AppendMap>
+              <AppendMapping mode="Custom">
+                <Field Source="titleId" Dest="titleid" />
+                <Field Source="ordering" Dest="ordering" />
+                <Field Source="title" Dest="title" />
+                <Field Source="region" Dest="region" />
+                <Field Source="language" Dest="language" />
+                <Field Source="types" Dest="types" />
+                <Field Source="attributes" Dest="attributes" />
+                <Field Source="isOriginalTitle" Dest="isoriginaltitle" />
+              </AppendMapping>
+            </AppendMap>
+            <PreSQL />
+            <TransactionMessages>False</TransactionMessages>
+            <OutputOption>Delete</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DSN=PostgreSQL35W
+Query=stg_imdb_title_akas</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>title_akas</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="afcacab3-f038-4dc2-a92c-3d7916160126" />
+      <Telemetry>
+        <PreviousWorkflowId value="5ab98961-94f5-4a68-a3db-7656cbd5b336" />
+        <OriginWorkflowId value="5ab98961-94f5-4a68-a3db-7656cbd5b336" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
